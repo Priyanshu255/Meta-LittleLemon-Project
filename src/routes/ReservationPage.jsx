@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/styles/ReservationsContent.css';
+import './ReservationsContent.css';
 import BookingForm from '../components/BookingForm';
 
 function ReservationsPage() {

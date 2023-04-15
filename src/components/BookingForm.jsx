@@ -2,9 +2,11 @@ import React from 'react';
 import {Formik, Form, ErrorMessage, Field} from 'formik';
 import TextField from './TextField';
 import * as Yup from 'yup';
+import { useState } from 'react';
 
 
 const BookingForm = () => {
+    const [availableTimes, setAvailableTimes] = useState(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00",]);
     const validate = Yup.object({
         Name : Yup.string()
             .required('Required'),
@@ -42,12 +44,16 @@ const BookingForm = () => {
                 <div className="field">
                     <label htmlFor="time">Choose Time</label>
                     <Field as = "select" name = "time">
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                        <option value="21:00">21:00</option>
-                        <option value="22:00">22:00</option>
+                        {availableTimes.map((availableTimes) => {
+                            return <option value = {availableTimes} >{availableTimes}</option>
+                        })}
+
+                        {/*  <option value="17:00">17:00</option>
+                         <option value="18:00">18:00</option>
+                         <option value="19:00">19:00</option>
+                         <option value="20:00">20:00</option>
+                         <option value="21:00">21:00</option>
+                         <option value="22:00">22:00</option> */}
                     </Field>
                     <ErrorMessage component="div" name= 'time' className = "error-message"/>
                 </div>

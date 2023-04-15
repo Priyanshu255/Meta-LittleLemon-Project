@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../components/icons_assets/Logo.svg';
+import Logo from './components/icons_assets/Logo.svg';
 import {Route, Routes, Link} from 'react-router-dom';
-import ReservationsPage from './ReservationPage';
-import About from './About';
-import Home from './Home';
+import ReservationsPage from './routes/ReservationPage';
+import About from './routes/About';
+import Home from './routes/Home';
 
 
 function Nav(){
